@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriela Aquino | Economist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --navy: #1A3A5C; --navy-light: #2A5A8C; --cream: #F8F6F1; --warm-gray: #8A8880; --text: #1E1E1E; --border: #E2DDD4; --accent: #C4884A; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 15px; line-height: 1.7; }
+  nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .nav-name { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--navy); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--warm-gray); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--navy); }
+  .hero { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 3rem; display: grid; grid-template-columns: 1fr 200px; gap: 4rem; align-items: start; }
+  .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 600; color: var(--navy); line-height: 1.15; }
+  .hero-text .subtitle { font-size: 14px; font-weight: 500; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .hero-text p { font-size: 15px; color: #3A3A3A; line-height: 1.8; margin-bottom: 1rem; }
+  .hero-text p strong { color: var(--navy); font-weight: 500; }
+  .hero-photo { width: 180px; height: 180px; border-radius: 4px; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #B8D4F0; flex-shrink: 0; }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-top: 1.5rem; }
+  .contact-item { font-size: 12.5px; color: var(--warm-gray); display: flex; align-items: center; gap: 0.4rem; }
+  .contact-item span.dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  main { max-width: 860px; margin: 0 auto; padding: 0 2rem 5rem; }
+  section { margin-bottom: 4rem; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .divider { width: 40px; height: 2px; background: var(--accent); margin-bottom: 1.8rem; }
+  .interests-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag { font-size: 12.5px; padding: 5px 14px; border: 1px solid var(--border); border-radius: 2px; color: var(--navy); background: white; }
+  .paper { border-left: 2px solid var(--border); padding: 0 0 0 1.25rem; margin-bottom: 2.2rem; transition: border-color 0.2s; }
+  .paper:hover { border-left-color: var(--accent); }
+  .paper-title-en { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); font-weight: 600; margin-bottom: 0.15rem; line-height: 1.35; }
+  .paper-title-es { font-size: 13px; color: var(--warm-gray); font-style: italic; margin-bottom: 0.35rem; }
+  .paper-meta { font-size: 12.5px; color: var(--warm-gray); margin-bottom: 0.35rem; }
+  .paper-meta em { color: var(--accent); font-style: normal; font-weight: 500; }
+  .paper-coauthors { font-size: 12.5px; color: #5A5A5A; margin-bottom: 0.45rem; }
+  .paper-abstract { font-size: 13.5px; color: #4A4A4A; line-height: 1.7; }
+  .paper-links { display: flex; gap: 0.6rem; margin-top: 0.7rem; flex-wrap: wrap; }
+  .paper-links a { font-size: 11.5px; font-weight: 500; color: var(--navy-light); text-decoration: none; border: 1px solid var(--border); padding: 3px 10px; border-radius: 2px; transition: all 0.2s; }
+  .paper-links a:hover { color: var(--accent); border-color: var(--accent); }
+  .exp-item { margin-bottom: 2rem; }
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem; }
+  .exp-org { font-weight: 500; color: var(--navy); font-size: 14.5px; }
+  .exp-date { font-size: 12.5px; color: var(--warm-gray); font-style: italic; }
+  .exp-role { font-size: 13px; color: var(--warm-gray); margin-bottom: 0.5rem; }
+  .exp-bullets { list-style: none; padding: 0; }
+  .exp-bullets li { font-size: 13.5px; color: #3A3A3A; padding: 0.25rem 0 0.25rem 1rem; position: relative; line-height: 1.65; }
+  .exp-bullets li::before { content: "–"; position: absolute; left: 0; color: var(--accent); }
+  .edu-item { margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; }
+  .edu-degree { font-weight: 500; color: var(--navy); font-size: 14px; }
+  .edu-institution { font-size: 13px; color: #4A4A4A; }
+  .edu-thesis { font-size: 13px; color: var(--warm-gray); font-style: italic; margin-top: 0.25rem; }
+  .edu-badge { font-size: 11px; font-weight: 500; padding: 3px 10px; background: #EBF3F8; color: var(--navy); border-radius: 2px; align-self: start; white-space: nowrap; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
+  .skill-row { border-bottom: 1px solid var(--border); padding: 0.6rem 0; }
+  .skill-label { font-size: 11px; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
+  .skill-value { font-size: 13px; color: #3A3A3A; }
+  footer { border-top: 1px solid var(--border); max-width: 860px; margin: 0 auto; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 12px; color: var(--warm-gray); }
+  @media (max-width: 620px) {
+    .hero { grid-template-columns: 1fr; } .hero-photo { display: none; }
+    .skills-grid { grid-template-columns: 1fr; } .edu-item { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Gabriela Aquino</span>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <p class="subtitle">Economist &middot; Data Scientist</p>
+    <h1>Gabriela<br>Aquino</h1>
+    <p style="margin-top:1.2rem;">I work at the intersection of <strong>macroeconomic forecasting</strong>, <strong>mixed-frequency econometrics</strong>, and <strong>machine learning</strong>, with a focus on real-time GDP nowcasting in data-constrained emerging market settings.</p>
+    <p>My MSc dissertation (University of Liverpool, 2025) provides the first vintage-based, regime-stratified comparison of econometric and ML nowcasters for El Salvador. Previously, I worked at the <strong>Central Reserve Bank of El Salvador</strong> and <strong>UNHCR</strong>, applying econometric methods and household survey data to macroeconomic and development policy questions.</p>
+    <div class="contact-row">
+      <span class="contact-item"><span class="dot"></span> asulamita97@gmail.com</span>
+      <span class="contact-item"><span class="dot"></span> linkedin.com/in/gabriela-aquino-56515319b</span>
+      <span class="contact-item"><span class="dot"></span> Chevening Scholar 2024–25</span>
+    </div>
+  </div>
+  <div class="hero-photo">GA</div>
+</div>
+
+<main>
+
+  <section>
+    <div class="section-label">Fields</div>
+    <div class="section-title">Research Interests</div>
+    <div class="divider"></div>
+    <div class="interests-grid">
+      <span class="tag">Macroeconomic nowcasting</span>
+      <span class="tag">Dynamic Factor Models</span>
+      <span class="tag">Mixed-frequency econometrics</span>
+      <span class="tag">Regularised estimation</span>
+      <span class="tag">Real-time ragged-edge data</span>
+      <span class="tag">Machine learning for macroeconomics</span>
+      <span class="tag">Cointegration &amp; VEC models</span>
+      <span class="tag">Input-Output analysis</span>
+      <span class="tag">Household survey methods</span>
+      <span class="tag">Gender &amp; labour economics</span>
+      <span class="tag">Emerging market data constraints</span>
+      <span class="tag">External sector measurement</span>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="section-label">Working Papers &amp; Publications</div>
+    <div class="section-title">Research</div>
+    <div class="divider"></div>
+
+    <div class="paper">
+      <div class="paper-title-en">Nowcasting GDP in Times of Crisis and Non-Crisis: A Comparative Study of Econometric and Machine Learning Models in El Salvador</div>
+      <div class="paper-title-es">Nowcasting del PIB en tiempos de crisis y no crisis: un estudio comparativo de modelos econométricos y de machine learning en El Salvador</div>
+      <div class="paper-meta">MSc Dissertation &mdash; University of Liverpool &middot; <em>September 2025</em> &middot; Supervisor: Dr. Mohamed Doukali</div>
+      <div class="paper-abstract">This paper provides the first vintage-based, regime-stratified comparison of econometric and machine learning nowcasters for El Salvador's quarterly GDP. Using a mixed-frequency panel of 123 monthly and quarterly indicators (2005–2024) with ragged-edge real-time evaluation across five within-quarter vintages, I find that Ridge regression delivers the strongest gains during crisis (avg. RMSE ratio 0.73 vs ARMA; 0.62 at the month-of vintage), consistent with L2 shrinkage preserving grouped signals when indicators co-move under stress. In tranquil periods, ARMA and Dynamic Factor Models match or outperform all ML alternatives — supporting a state-contingent nowcasting protocol for data-constrained policy institutions.</div>
+      <div class="paper-links">
+        <a href="#">PDF (available on request)</a>
+        <a href="https://github.com/gabriela-aquino" target="_blank">Code on GitHub</a>
+        <a href="#">Data available on request</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title-en">Impact of Family Remittances on the Economic Growth of El Salvador: An Analysis of Their Productive Use</div>
+      <div class="paper-title-es">Impacto de las remesas familiares en el crecimiento económico de El Salvador: un análisis de su uso productivo</div>
+      <div class="paper-meta">Policy Paper &middot; <em>Central Reserve Bank of El Salvador</em></div>
+      <div class="paper-abstract">This study examines the short- and long-run relationship between remittance inflows and GDP growth in El Salvador using a Vector Error Correction (VEC) model within an extended Cobb-Douglas production framework incorporating GDP, capital stock, employment, and remittances. Following Johansen cointegration tests confirming a stable long-run relationship, the estimated long-run elasticity of GDP with respect to remittances is 0.13%, with an error correction coefficient of −0.66 (66% annual adjustment speed). The model explains 70.6% of GDP variation (adjusted R²). Results indicate that while remittances are predominantly directed toward consumption, their productive channelling — particularly into human capital and investment — represents a pathway through which their aggregate growth impact could be amplified.</div>
+      <div class="paper-links">
+        <a href="https://www.bcr.gob.sv/documental/Inicio/vista/00f76201daf2472aba0732f2fd307cb3.pdf" target="_blank">PDF (BCR)</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title-en">Estimation of Female Sectoral Employment and Wages in El Salvador, 1990–2015: An Input-Output Approach</div>
+      <div class="paper-title-es">Estimación del empleo y salario sectorial femenino en El Salvador, 1990–2015: un enfoque desde el insumo-producto</div>
+      <div class="paper-meta">Undergraduate Thesis &mdash; Universidad Centroamericana José Simeón Cañas &middot; <em>October 2020</em></div>
+      <div class="paper-coauthors">With Sofía Hernández Palacios, Zayda Ortiz Batres &amp; Ana Laura Pérez Gómez &middot; Advisor: Dr. Mario César Sánchez Pérez</div>
+      <div class="paper-abstract">This paper analyses gender-based occupational segregation in El Salvador across 45 economic sectors over 1990–2015, using Wiedmann's Total Impact Multipliers (TIMs) methodology applied to the Leontief Input-Output Matrix. The TIMs approach expands employment and wage data from 14 aggregated sectors to 45 disaggregated branches, enabling a granular analysis of labour market structure. Drawing on the national household survey (EHPM), findings reveal persistent horizontal segregation: women remain concentrated in fewer than 5 of 45 sectors throughout the period, with limited intersectoral mobility. Gender wage gaps are documented across educational levels and economic branches, contributing new statistical evidence on structural inequality in Central American labour markets.</div>
+      <div class="paper-links">
+        <a href="https://www.bcr.gob.sv/documental/Inicio/vista/3c92fe1fd17da39f59ceb3aedf4c24c0.pdf" target="_blank">PDF (BCR)</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title-en">An Approach to the Measurement of Cross-Border Digital Trade in El Salvador</div>
+      <div class="paper-title-es">Un enfoque para la medición del comercio digital transfronterizo en El Salvador</div>
+      <div class="paper-meta">Policy Paper &middot; <em>Presented at UNCTAD E-Commerce Working Group, Geneva</em> &middot; Central Reserve Bank of El Salvador</div>
+      <div class="paper-abstract">Develops El Salvador's first official statistical framework for measuring cross-border digital trade, using Python-based transaction-level analysis of 20M+ annual credit and debit card records. The methodology maps digital transactions to standard Balance of Payments categories, generating the first quantitative estimates of digital platforms' contribution to GDP and the trade balance. El Salvador was one of only two countries presenting transaction-level analysis at the UNCTAD forum; the methodology is now referenced as regional best practice.</div>
+      <div class="paper-links">
+        <a href="#">Slides (available on request)</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="experience">
+    <div class="section-label">Work</div>
+    <div class="section-title">Experience</div>
+    <div class="divider"></div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-org">Central Reserve Bank of El Salvador</span>
+        <span class="exp-date">Aug 2021 – Dec 2023</span>
+      </div>
+      <div class="exp-role">Economist, External Sector Department</div>
+      <ul class="exp-bullets">
+        <li>Built Ridge, LASSO, and XGBoost forecasting models in R and Stata for external-sector indicators under alternative global shock scenarios; applied SHAP for model interpretability and bias-variance diagnostics.</li>
+        <li>Led El Salvador's first cross-border digital trade measurement initiative, processing 20M+ annual transactions with Python/SQL; presented at UNCTAD E-Commerce Working Group, Geneva.</li>
+        <li>Constructed mixed-frequency real-time monitoring system for the Balance of Payments supporting IMF Article IV consultations.</li>
+        <li>Produced monthly macroeconomic briefings covering GDP, inflation, trade, and external balances across Central America.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-org">UNHCR — United Nations High Commissioner for Refugees</span>
+        <span class="exp-date">Dec 2023 – Sep 2024</span>
+      </div>
+      <div class="exp-role">Statistics and Data Analysis Associate</div>
+      <ul class="exp-bullets">
+        <li>Designed Difference-in-Differences evaluation of cash-based interventions; conducted parallel trends diagnostics, robustness checks, and sensitivity analysis across 56,000+ household records.</li>
+        <li>Built vulnerability and displacement risk models integrating macroeconomic indicators with survey data, stress-testing projections under alternative shock scenarios.</li>
+        <li>Developed 25+ automated dashboards and established data governance protocols ensuring full reproducibility of institutional reporting.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-org">Universidad Centroamericana José Simeón Cañas</span>
+        <span class="exp-date">2019</span>
+      </div>
+      <div class="exp-role">Research Assistant — Economic Data Analysis</div>
+      <ul class="exp-bullets">
+        <li>Constructed municipal GDP estimates using satellite imagery and spatial data; analysed poverty, HDI, and electricity consumption for subnational development research.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-label">Training</div>
+    <div class="section-title">Education</div>
+    <div class="divider"></div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">MSc in Data Science for Economics</div>
+        <div class="edu-institution">University of Liverpool, United Kingdom &mdash; 2024–2025</div>
+        <div class="edu-thesis">Dissertation: Nowcasting GDP in Times of Crisis and Non-Crisis: Econometric and ML Models for El Salvador</div>
+      </div>
+      <span class="edu-badge">Chevening Scholar</span>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">BSc in Economics</div>
+        <div class="edu-institution">Universidad Centroamericana José Simeón Cañas, El Salvador &mdash; 2015–2020</div>
+        <div class="edu-thesis">Thesis: Estimation of Female Employment and Wages in El Salvador (1990–2015): An Input-Output Approach</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Tools</div>
+    <div class="section-title">Technical Skills</div>
+    <div class="divider"></div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-label">Econometrics &amp; Forecasting</div>
+        <div class="skill-value">Dynamic Factor Models, ARMA/MIDAS, Ridge/LASSO, XGBoost, VEC/VAR, Johansen Cointegration, Input-Output (Leontief/Wiedmann TIMs), DiD, IV, Synthetic Control</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">Programming</div>
+        <div class="skill-value">Python (pandas, scikit-learn, statsmodels, SHAP, NumPy), R, Shiny, Stata, EViews, SQL</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">Visualisation &amp; BI</div>
+        <div class="skill-value">Power BI (Advanced DAX/M), Tableau, R Shiny dashboards, Excel (advanced)</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">Data</div>
+        <div class="skill-value">Household surveys (EHPM, 56K+ records), transaction-level microdata (20M+ records), mixed-frequency macro panels, ragged-edge real-time vintages</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-label">Languages</div>
+        <div class="skill-value">Spanish (native), English (fluent)</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <p>Gabriela Aquino &middot; asulamita97@gmail.com</p>
+  <p style="font-size:11px;">Built with GitHub Pages</p>
+</footer>
+
+</body>
+</html>
